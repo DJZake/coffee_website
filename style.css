@@ -1,0 +1,68 @@
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+header{
+    display: flex;
+    background-color: #B67352;
+    margin: -.3%;
+    margin-top: -1%;
+}
+h1{
+    color: white;
+    font-size: 4rem;
+    margin-top: 2%;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 2%;
+}
+.title{
+    color: #8CB9BD;
+    display: inline-block;
+    width: 50%;
+}
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+img{
+    width: 30%;
+    margin-top: 2%;
+    float: left;
+}
+p{
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7rem;
+    color: #6C3428;
+    margin-left: 2%;
+    margin-top: 4%;
+  }
+  .container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2%;
+  }
+.cup{
+    order: 2;
+}
+.divi{
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+.aimg{
+    align-items: center !important;
+    margin: 0%;
+}
+h2{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 2%;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
