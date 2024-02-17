@@ -45,6 +45,7 @@ p{
     display: flex;
     justify-content: space-evenly;
     margin-top: 2%;
+    /* flex-wrap: wrap; */
   }
 .cup{
     order: 2;
@@ -55,8 +56,8 @@ p{
     justify-content: space-between;
 }
 .aimg{
-    align-items: center !important;
-    margin: 0%;
+    margin-left: 35%;
+    display: block;
 }
 h2{
     text-align: center;
@@ -65,4 +66,7 @@ h2{
     font-family: "Protest Strike", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+.ap{
+    display: block;
 }
