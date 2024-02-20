@@ -15,12 +15,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&family=Protest+Strike&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/04cf6307fd.js" crossorigin="anonymous"></script>
 </head>
 <body style="background-color: #ffead8;">
     <header>
         <h1>Orginal <span class="title">Coffee</span> Shop</h1>
         <nav>
-            <ul>
+            <ul id="sidemenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="about.html">About</a></li>
@@ -38,11 +39,82 @@
 </div>
 <div>
     <h2>About Us</h2>
-    <div class="about">
     <img class="aimg" src="img/pexels-juan-pablo-serrano-arenas-894695.jpg" alt="">
-    <p class="ap">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi expedita libero itaque quod aut quidem deleniti sequi explicabo doloribus repellat, ea nobis excepturi nulla? Itaque provident ipsa reiciendis cum aperiam!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates numquam officia nesciunt sint id ipsam deserunt, beatae quia iusto in maxime molestiae fugit perspiciatis. Consequuntur optio rem voluptatibus totam a?</p>
+    <p class="ap">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis ex sed exercitationem ipsam cupiditate consequatur, quisquam nulla eveniet ea nam totam dignissimos, animi similique aperiam pariatur odio minus iste id! Eligendi expedita libero itaque quod aut quidem deleniti sequi explicabo doloribus repellat, ea nobis excepturi nulla? Itaque provident ipsa reiciendis cum aperiam!</p>
+    <h2>Contact Us</h2>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <p> <i class="fa-solid fa-paper-plane"></i>coffee@shop.com</p>
+                    <p> <i class="fa-solid fa-phone"></i>+91 85XXXXXXXX</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn btn2">Submiit</button>
+                    </form>
+                    <span id="message"></span>
+                </div>
+            </div>
+        </div>
 </div>
-</div>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname){
+        for(tablinks of tablinks){
+            tablinks.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }   
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+
+ </script>
+
+ <script>
+
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0"
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px"
+    }
+
+
+ </script>
+ <script>
+ const scriptURL = 'https://script.google.com/macros/s/AKfycbyz4hVvdHs1I-YGPIi2vXqYDHFH0hXnTwTVdFO84hjEWb5SxNxPbtzsHJoknzDgyAjS/exec'
+ const form = document.forms['submit-to-google-sheet']
+ const message = document.getElementById("message")
+
+ form.addEventListener('submit', e => {
+   e.preventDefault()
+   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+     .then(response => {
+        message.innerHTML = "Message sent successfully"
+        setTimeout(function(){
+            message.innerHTML = ""
+        },5000)
+        form.reset()
+     })
+     .catch(error => console.error('Error!', error.message))
+ })
+</script>
 </body>
 </html>
