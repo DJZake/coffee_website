@@ -79,7 +79,7 @@ h2{
 }
 
 .contact-left p i{
-    color: #ff004f;margin-right: 15px;
+    color: #B67352;margin-right: 15px;
     font-size: 25px;
 }
 
@@ -97,7 +97,7 @@ h2{
 }
 
 .social-icons a:hover{
-    color: #ff004f;
+    color:#B67352;
     transform: translateY(-5px);
 }
 
@@ -139,8 +139,9 @@ form .btn2{
 }
 nav{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: end;
+    align-items: self-end;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
 }
 
@@ -161,7 +162,7 @@ nav ul li a::after{
     content: '';
     width: 0;
     height: 3px;
-    background-color: #ff004f;
+    background-color: #B67352;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -177,7 +178,31 @@ ap{
 @media only screen and (max-width: 500px){
 
 img{
-    width: 0%;
+    width: 100%;
+    clear: both;
 }
-    
+
+.tab-links{
+    font-size: 16px;
+    margin-right: 20px;
+} 
+.container{
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}  
+.divi{
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+  p{
+    clear: left;
+    clear: right;
+  }  
+.aimg{
+    align-items: center !important;
+    margin: 0% !important;
+}
 }
